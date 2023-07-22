@@ -31,3 +31,21 @@ project19:forge a signature to pretend that you are Satoshi
     
      1：定义了椭圆曲线参数p、a、b以及基点G的x坐标和y坐标。辅助函数，包括求最大公约数、扩展欧几里得算法、求逆元、模幂运算等。实现了将整数转换为字节数组的函数int_to_bytes()和将字节数组转换为整数的函数bytes_to_int()。定义了要签名的消息msg。（关键代码如下）
 
+![image](https://github.com/llmgroup68/homework-llmgroup68project19/assets/138642474/b2cda55d-4d7c-476e-bbdf-cf5ecf3b0061)
+
+    2：然后我们实现了ECDSA签名函数ECDSA_sign(msg)，其中使用了随机数k和哈希函数SHA-1来生成签名。使用了哈希函数SHA-1来计算消息的哈希值，并根据公式验证签名的有效性。
+调用ECDSA_verif_sign()函数对给定的消息msg和签名(r, s)进行验证，返回验证结果。
+
+![image](https://github.com/llmgroup68/homework-llmgroup68project19/assets/138642474/ace6a11f-ae11-490e-bb64-416d097850a3)
+
+   3：最后，实现了伪造签名的函数forge_sign()，该函数生成了随机数u和v，并根据这些随机数计算出伪造的签名(r, s, e)。实现了验证伪造签名的函数verify(r, s, e)，该函数根据公式验证伪造签名的有效性。
+
+   ![image](https://github.com/llmgroup68/homework-llmgroup68project19/assets/138642474/84d3e9dd-4110-4cbc-92e1-710c0c249ffe)
+
+   运行结果如下：
+
+   ![image](https://github.com/llmgroup68/homework-llmgroup68project19/assets/138642474/db1f866a-2b47-4c8b-8243-ea2383f57694)
+
+
+
+
