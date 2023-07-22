@@ -24,9 +24,11 @@ project19:forge a signature to pretend that you are Satoshi
        
       使用公钥、消息的哈希值和签名进行验证，检查签名是否有效。
        
-       验证的过程包括：计算w = s^-1 mod n，计算u1 = (hash * w) mod n，计算u2 = (r * w) mod n，计算验证点V = (u1 * G + u2 * publicKey)。如果验证点V的x坐标与r相等，则说明签名有效，否则签名无效。
+       验证的过程包括：计算w = s^-1 mod n，计算u1 = (hash * w) mod n，计算u2 = (r * w) mod n，计算验证点V = (u1 * G + u2 * publicKey)。
+       如果验证点V的x坐标与r相等，则说明签名有效，否则签名无效。
 2：实验过程
     在实验中，首先实现实现了ECDSA（椭圆曲线数字签名算法）的签名和验证功能。
+    
      1：定义了椭圆曲线参数p、a、b以及基点G的x坐标和y坐标。辅助函数，包括求最大公约数、扩展欧几里得算法、求逆元、模幂运算等。实现了生成随机私钥和对应的公钥的函数get_key()。
 实现了将整数转换为字节数组的函数int_to_bytes()和将字节数组转换为整数的函数bytes_to_int()。定义了要签名的消息msg。（关键代码如下）
 
